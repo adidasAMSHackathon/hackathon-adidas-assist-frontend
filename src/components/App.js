@@ -1,16 +1,43 @@
 import React, { Component } from 'react';
+import {BrowserRouter, Route} from 'react-router-dom';
+
+// import 'font-awesome/css/font-awesome.css';
+
+//import Header from './header/Header';
+import Landing from '../pages/Landing';
+
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      isLoggedIn: false
+    }
+
+    this.handler = this.handler.bind(this);
+  }
+
+
+  handler() {
+    this.setState({
+        user: false
+    });
+}
+
+  // Preferred location to do any initialization actions
+  componentDidMount() {
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="main-app">
+        <BrowserRouter>
+          <div>
+            <Route exact path="/" component={Landing} />
+          </div>
+        </BrowserRouter>
       </div>
     );
   }
