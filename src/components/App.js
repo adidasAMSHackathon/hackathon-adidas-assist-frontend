@@ -8,7 +8,16 @@ import Landing from '../pages/landing/landing';
 import LoginPage from '../components/auth/login';
 import Header from '../components/header/Header';
 
+import { Widget, addResponseMessage } from 'react-chat-widget';
+import 'react-chat-widget/lib/styles.css';
+import logo from '../assets/monster.png';
 import './App.css';
+
+import {ApiAiClient} from "api-ai-javascript";
+
+const client = new ApiAiClient({accessToken: '622c99fbec55421ba644273a7c7b82cd'});
+
+
 
 class App extends Component {
   constructor(props) {
@@ -18,18 +27,32 @@ class App extends Component {
       isLoggedIn: false
     }
 
-    this.handler = this.handler.bind(this);
+    this.handleNewUserMessage = this.handleNewUserMessage.bind(this);
   }
-
-
-  handler() {
-    this.setState({
-        user: false
-    });
-}
 
   // Preferred location to do any initialization actions
   componentDidMount() {
+    addResponseMessage("Howdy!");
+  }
+
+  
+
+  handleNewUserMessage = (newMessage) => {
+    console.log(`New message incoming! ${newMessage}`);
+    // Now send the message throught the backend API
+    client
+    .textRequest(newMessage)
+        .then((response) => {
+          console.log('Response: ', response);
+
+          setTimeout(() => {
+            addResponseMessage(response.result.fulfillment.speech);
+          }, 500);
+
+        })
+        .catch((error) => {/* do something here too */})
+    
+    
   }
 
   render() {
@@ -42,6 +65,12 @@ class App extends Component {
             <Route path="/login" component={LoginPage}/>
           </div>
         </BrowserRouter>
+        <Widget 
+          handleNewUserMessage={this.handleNewUserMessage}
+          profileAvatar={logo}
+          title="Adidas Assist"
+          subtitle="Mr. Bot"
+        />
       </div>
     );
   }
