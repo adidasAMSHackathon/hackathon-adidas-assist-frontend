@@ -17,6 +17,10 @@ class Details extends Component {
     this.handleColorChange = this.handleColorChange.bind(this);
   }
 
+  componentDidMount() {
+    this.props.handleCurrentLocation('Sneakers123');
+  }
+
   handleColorChange(event) {
     console.log(event.target.value);
     this.setState({value: event.target.value})
