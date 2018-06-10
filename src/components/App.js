@@ -7,6 +7,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import Landing from '../pages/landing/landing';
 import LoginPage from '../components/auth/login';
 import Header from '../components/header/Header';
+import DetailsPage from '../pages/details/details';
 
 import './App.css';
 
@@ -40,6 +41,7 @@ class App extends Component {
             <Header />
             <Route exact path="/" component={Landing} />
             <Route path="/login" component={LoginPage}/>
+            <Route path="/details" component={DetailsPage}/>
           </div>
         </BrowserRouter>
       </div>
