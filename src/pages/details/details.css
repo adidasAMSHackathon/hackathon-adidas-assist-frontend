@@ -27,3 +27,15 @@ padding-bottom: 10px;
 .info__box {
 	padding: 10px;
 }
+select {
+	padding: 10px;
+	background-color: #EEF0F8;
+	border-radius: 10px;
+	border: none;
+	margin-bottom: 20px;
+}
+.flex {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
