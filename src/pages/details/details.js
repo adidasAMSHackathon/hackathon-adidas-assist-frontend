@@ -40,7 +40,7 @@ class Details extends Component {
            : <img className="product__img" src={require('./blue.jpg')} alt="product"></img>
           }
           <div className="info__box">
-            <h1 className="product__title">Red Sneakers</h1>
+            <h1 className="product__title">Cool Sneakers</h1>
             <h3 className="product__price">99,50 €</h3>
             <div className="flex">
               <div className="choices">

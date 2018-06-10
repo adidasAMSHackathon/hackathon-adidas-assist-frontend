@@ -21,7 +21,7 @@ class Landing extends Component {
         <div className="frame__product">
           <img className="product__img" src={require('./black.jpg')} alt="product"></img>
           <div className="info__box">
-            <h1 className="product__title">Red Sneakers</h1>
+            <h1 className="product__title">Fun Sneakers</h1>
             <h3 className="product__price">195,50 €</h3>
             <Button bsStyle="danger" block>Details</Button>
           </div>
@@ -29,7 +29,7 @@ class Landing extends Component {
         <div className="frame__product">
           <img className="product__img" src={require('./green.jpg')} alt="product"></img>
           <div className="info__box">
-            <h1 className="product__title">Red Sneakers</h1>
+            <h1 className="product__title">Cute Sneakers</h1>
             <h3 className="product__price">80,50 €</h3>
             <Button bsStyle="danger" block>Details</Button>
           </div>

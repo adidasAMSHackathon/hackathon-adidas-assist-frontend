@@ -82,8 +82,8 @@ class App extends Component {
             addResponseMessage(reply);
 
             if (replyData.length > 1) {
-              let followupReply = `Sending you to the best ${replyData[2]} ${replyData[1]} for ${replyData[2]}!`;
-              
+              let followupReply = `Sending you to the best ${replyData[3]} ${replyData[1]} for ${replyData[2]}!`;
+
               setTimeout(() => {
                 addResponseMessage(followupReply);
               }, 700);
@@ -91,7 +91,7 @@ class App extends Component {
 
           }, 1000);
 
-          
+
 
         })
         .catch((error) => {/* do something here too */})
@@ -118,7 +118,7 @@ class App extends Component {
             <Route path="/details" render={props => <DetailsPage handleCurrentLocation = {this.handleCurrentLocation} />} />
           </div>
         </BrowserRouter>
-        <Widget 
+        <Widget
           handleNewUserMessage={this.handleNewUserMessage}
           profileAvatar={logo}
           title="Adidas Assist"
