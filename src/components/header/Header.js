@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import { Nav, Navbar, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
 class Header extends Component {
@@ -9,33 +9,29 @@ class Header extends Component {
       <Navbar inverse collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#brand">React-Bootstrap</a>
+            <a href="#brand">Adidas Assist</a>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
             <NavItem eventKey={1} href="#">
-              Link
+              Home
             </NavItem>
             <NavItem eventKey={2} href="#">
-              Link
+              Products
             </NavItem>
-            <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1}>Action</MenuItem>
-              <MenuItem eventKey={3.2}>Another action</MenuItem>
-              <MenuItem eventKey={3.3}>Something else here</MenuItem>
-              <MenuItem divider />
-              <MenuItem eventKey={3.3}>Separated link</MenuItem>
-            </NavDropdown>
+            <NavItem eventKey={3} href="#">
+              Blog
+            </NavItem>
           </Nav>
           <Nav pullRight>
-            <NavItem eventKey={1} href="#">
-              Link Right
-            </NavItem>
-            <NavItem eventKey={2} href="#">
-              Link Right
-            </NavItem>
+          <NavDropdown eventKey={1} title="Account" id="basic-nav-dropdown">
+              <MenuItem eventKey={1.1}>Settings</MenuItem>
+              <MenuItem eventKey={1.2}>Shopping Cart</MenuItem>
+              <MenuItem divider />
+              <MenuItem eventKey={1.3}>Logout</MenuItem>
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
