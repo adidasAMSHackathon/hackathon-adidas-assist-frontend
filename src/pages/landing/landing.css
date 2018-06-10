@@ -1,0 +1,10 @@
+.landing-wrapper {
+	width: 100vw;
+
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.landing__image {
+	margin: 20px;
+}
